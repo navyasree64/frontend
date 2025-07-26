@@ -3,120 +3,330 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YAICESS Tech Conference 2025</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>YAICESS Solutions - Tech Conference 2025</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>YAICESS</h1>
-                <span>Tech Conference 2025</span>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>YAICESS <span>Solutions</span></h2>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="speakers.html">Speakers</a></li>
-                    <li><a href="register.html">Register</a></li>
-                    <li><a href="login.html">Login</a></li>
-                </ul>
-            </nav>
-            <div class="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="container">
-            <h2>The Future of Technology Starts Here</h2>
-            <p>Join us on July 21-23, 2025 for the most anticipated tech conference of the year</p>
-            <a href="register.html" class="btn">Register Now</a>
-        </div>
-    </section>
-
-    <section class="countdown">
-        <div class="container">
-            <h3>Conference Starts In:</h3>
-            <div class="timer">
-                <div>
-                    <span id="days">00</span>
-                    <small>Days</small>
-                </div>
-                <div>
-                    <span id="hours">00</span>
-                    <small>Hours</small>
-                </div>
-                <div>
-                    <span id="minutes">00</span>
-                    <small>Minutes</small>
-                </div>
-                <div>
-                    <span id="seconds">00</span>
-                    <small>Seconds</small>
-                </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#speakers" class="nav-link">Speakers</a></li>
+                <li><a href="#schedule" class="nav-link">Schedule</a></li>
+                <li><a href="register.html" class="nav-link nav-cta">Register Now</a></li>
+                <li><a href="admin-login.html" class="nav-link admin-link">Admin</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
-    </section>
+    </nav>
 
-    <section class="highlights">
-        <div class="container">
-            <h2>Conference Highlights</h2>
-            <div class="highlight-grid">
-                <div class="highlight-item">
-                    <i class="fas fa-microphone"></i>
-                    <h3>Keynote Speakers</h3>
-                    <p>Learn from industry leaders and innovators shaping the future of technology.</p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-main">YAICESS Tech Conference</span>
+                    <span class="title-sub">Shaping the Future of Technology</span>
+                </h1>
+                <p class="hero-description">
+                    Join industry leaders, innovators, and tech enthusiasts for an unforgettable experience. 
+                    Discover cutting-edge technologies, network with professionals, and accelerate your career.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" id="totalRegistrations">0</span>
+                        <span class="stat-label">Registered</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">4</span>
+                        <span class="stat-label">Sessions</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Days</span>
+                    </div>
                 </div>
-                <div class="highlight-item">
-                    <i class="fas fa-network-wired"></i>
-                    <h3>Networking</h3>
-                    <p>Connect with professionals and like-minded individuals in your field.</p>
+                <div class="hero-buttons">
+                    <a href="register.html" class="btn btn-primary">
+                        <i class="fas fa-ticket-alt"></i>
+                        Register Now
+                    </a>
+                    <a href="#about" class="btn btn-secondary">
+                        <i class="fas fa-info-circle"></i>
+                        Learn More
+                    </a>
                 </div>
-                <div class="highlight-item">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>Workshops</h3>
-                    <p>Hands-on sessions to enhance your skills and knowledge.</p>
-                </div>
-                <div class="highlight-item">
-                    <i class="fas fa-lightbulb"></i>
+            </div>
+            <div class="hero-image">
+                <div class="hero-card">
+                    <i class="fas fa-code"></i>
                     <h3>Innovation</h3>
-                    <p>Discover the latest trends and technologies transforming industries.</p>
+                    <p>Cutting-edge tech</p>
+                </div>
+                <div class="hero-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Networking</h3>
+                    <p>Connect with experts</p>
+                </div>
+                <div class="hero-card">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Growth</h3>
+                    <p>Accelerate your career</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About the Conference</h2>
+                <p>Discover what makes YAICESS Tech Conference the premier technology event</p>
+            </div>
+            <div class="about-content">
+                <div class="about-grid">
+                    <div class="about-card">
+                        <div class="card-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI & Machine Learning</h3>
+                        <p>Explore the latest advancements in artificial intelligence and machine learning technologies that are reshaping industries worldwide.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Cloud Computing</h3>
+                        <p>Learn about cloud strategies, migration best practices, and emerging cloud technologies from industry experts.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Cybersecurity</h3>
+                        <p>Discover modern security protocols, threat detection, and protection strategies for today's digital landscape.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>DevOps & Automation</h3>
+                        <p>Master DevOps practices, automation tools, and continuous integration/deployment strategies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers Section -->
+    <section id="speakers" class="speakers">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Speakers</h2>
+                <p>Learn from industry leaders and technology pioneers</p>
+            </div>
+            <div class="speakers-grid">
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b3db?w=300&h=300&fit=crop&crop=face" alt="Dr. Sarah Chen">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Sarah Chen</h3>
+                        <p class="speaker-title">AI Research Director</p>
+                        <p class="speaker-company">TechCorp AI Labs</p>
+                        <p class="speaker-bio">Leading expert in machine learning with 15+ years of experience in AI research and development.</p>
+                        <div class="speaker-social">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face" alt="Mark Johnson">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Mark Johnson</h3>
+                        <p class="speaker-title">Cloud Solutions Architect</p>
+                        <p class="speaker-company">CloudTech Innovations</p>
+                        <p class="speaker-bio">Expert in cloud migration and architecture with expertise in AWS, Azure, and Google Cloud platforms.</p>
+                        <div class="speaker-social">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face" alt="Lisa Rodriguez">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Lisa Rodriguez</h3>
+                        <p class="speaker-title">Cybersecurity Specialist</p>
+                        <p class="speaker-company">SecureNet Solutions</p>
+                        <p class="speaker-bio">Cybersecurity expert specializing in modern threat detection and enterprise security solutions.</p>
+                        <div class="speaker-social">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face" alt="Alex Kumar">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Alex Kumar</h3>
+                        <p class="speaker-title">DevOps Engineer</p>
+                        <p class="speaker-company">AutomateFlow</p>
+                        <p class="speaker-bio">DevOps expert with deep knowledge in CI/CD, containerization, and infrastructure automation.</p>
+                        <div class="speaker-social">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="schedule">
+        <div class="container">
+            <div class="section-header">
+                <h2>Conference Schedule</h2>
+                <p>Two days packed with insightful sessions and networking opportunities</p>
+            </div>
+            <div class="schedule-container">
+                <div class="schedule-day">
+                    <h3>Day 1 - August 15, 2025</h3>
+                    <div class="schedule-timeline">
+                        <div class="schedule-item">
+                            <div class="schedule-time">09:00 AM</div>
+                            <div class="schedule-content">
+                                <h4>AI and Machine Learning Trends</h4>
+                                <p>Dr. Sarah Chen</p>
+                                <span class="schedule-type">Keynote</span>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-time">11:00 AM</div>
+                            <div class="schedule-content">
+                                <h4>Cloud Computing Strategies</h4>
+                                <p>Mark Johnson</p>
+                                <span class="schedule-type">Workshop</span>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-time">02:00 PM</div>
+                            <div class="schedule-content">
+                                <h4>Cybersecurity in Modern Apps</h4>
+                                <p>Lisa Rodriguez</p>
+                                <span class="schedule-type">Technical</span>
+                            </div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-time">04:00 PM</div>
+                            <div class="schedule-content">
+                                <h4>DevOps and Automation</h4>
+                                <p>Alex Kumar</p>
+                                <span class="schedule-type">Hands-on</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Join Us?</h2>
+                <p>Don't miss this opportunity to connect with industry leaders and advance your tech career</p>
+                <div class="cta-stats">
+                    <div class="cta-stat">
+                        <span class="cta-number" id="recentRegistrations">0</span>
+                        <span class="cta-label">Registered Today</span>
+                    </div>
+                </div>
+                <a href="register.html" class="btn btn-primary btn-large">
+                    <i class="fas fa-rocket"></i>
+                    Register Now - Limited Seats
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>About YAICESS</h3>
-                    <p>YAICESS Solutions is a leading technology consulting firm dedicated to innovation and excellence.</p>
+                    <h3>YAICESS Solutions</h3>
+                    <p>Leading the future of technology through innovation, education, and collaboration.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
                 <div class="footer-section">
-                    <h3>Quick Links</h3>
+                    <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="speakers.html">Speakers</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#speakers">Speakers</a></li>
                         <li><a href="register.html">Register</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-envelope"></i> info@yaicess.com</p>
-                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@yaicess.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Tech District, Silicon Valley</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Event Details</h4>
+                    <ul>
+                        <li><i class="fas fa-calendar"></i> August 15-16, 2025</li>
+                        <li><i class="fas fa-clock"></i> 9:00 AM - 6:00 PM</li>
+                        <li><i class="fas fa-users"></i> Limited to 200 attendees</li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 YAICESS Solutions. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="admin-login.html">Admin Portal</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/api.js"></script>
 </body>
 </html>

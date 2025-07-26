@@ -3,103 +3,271 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Successful - YAICESS Tech Conference 2025</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Registration Successful - YAICESS Tech Conference</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>YAICESS</h1>
-                <span>Tech Conference 2025</span>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><a href="index.html">YAICESS <span>Solutions</span></a></h2>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="speakers.html">Speakers</a></li>
-                    <li><a href="register.html">Register</a></li>
-                    <li><a href="login.html">Login</a></li>
-                </ul>
-            </nav>
-            <div class="mobile-menu">
-                <i class="fas fa-bars"></i>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#speakers" class="nav-link">Speakers</a></li>
+                <li><a href="index.html#schedule" class="nav-link">Schedule</a></li>
+                <li><a href="register.html" class="nav-link nav-cta">Register Now</a></li>
+                <li><a href="admin-login.html" class="nav-link admin-link">Admin</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <section class="success-message">
+    <!-- Success Section -->
+    <section class="success-section">
         <div class="container">
-            <div class="success-card">
-                <div class="icon">
-                    <i class="fas fa-check-circle"></i>
+            <div class="success-container">
+                <!-- Success Animation -->
+                <div class="success-animation">
+                    <div class="success-checkmark">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="success-circles">
+                        <div class="circle-1"></div>
+                        <div class="circle-2"></div>
+                        <div class="circle-3"></div>
+                    </div>
                 </div>
-                <h2>Registration Successful!</h2>
-                <p>Thank you for registering for YAICESS Tech Conference 2025. We've sent a confirmation email to your registered email address.</p>
-                <p>Your registration details:</p>
-                <div class="registration-details">
-                    <p><strong>Name:</strong> <span id="reg-name">[Name]</span></p>
-                    <p><strong>Email:</strong> <span id="reg-email">[Email]</span></p>
-                    <p><strong>Session:</strong> <span id="reg-session">[Session]</span></p>
+
+                <!-- Success Content -->
+                <div class="success-content">
+                    <h1>Registration Successful!</h1>
+                    <p class="success-subtitle">Welcome to YAICESS Tech Conference 2025</p>
+                    
+                    <div class="registration-summary" id="registrationSummary">
+                        <h3>Registration Details</h3>
+                        <div class="summary-grid">
+                            <div class="summary-item">
+                                <span class="label">Registration ID:</span>
+                                <span class="value" id="registrationId">#--</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="label">Name:</span>
+                                <span class="value" id="registrationName">--</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="label">Email:</span>
+                                <span class="value" id="registrationEmail">--</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="label">Session:</span>
+                                <span class="value" id="registrationSession">--</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="next-steps">
+                        <h3>What's Next?</h3>
+                        <div class="steps-grid">
+                            <div class="step-item">
+                                <div class="step-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="step-content">
+                                    <h4>Check Your Email</h4>
+                                    <p>A confirmation email with event details has been sent to your registered email address.</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-icon">
+                                    <i class="fas fa-calendar-plus"></i>
+                                </div>
+                                <div class="step-content">
+                                    <h4>Save the Date</h4>
+                                    <p>Mark your calendar for August 15-16, 2025. The conference starts at 9:00 AM.</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="step-content">
+                                    <h4>Join the Community</h4>
+                                    <p>Follow us on social media for updates, speaker announcements, and networking opportunities.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="conference-info">
+                        <h3>Conference Information</h3>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>August 15-16, 2025</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-clock"></i>
+                                <span>9:00 AM - 6:00 PM</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Tech District Conference Center, Silicon Valley</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-ticket-alt"></i>
+                                <span>All sessions included</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="success-actions">
+                        <a href="index.html" class="btn btn-primary">
+                            <i class="fas fa-home"></i>
+                            Back to Home
+                        </a>
+                        <button onclick="shareOnSocial()" class="btn btn-secondary">
+                            <i class="fas fa-share-alt"></i>
+                            Share the News
+                        </button>
+                    </div>
                 </div>
-                <p>We look forward to seeing you at the conference on July 21-23, 2025 at the Grand Tech Convention Center.</p>
-                <a href="index.html" class="btn">Back to Home</a>
             </div>
         </div>
     </section>
 
-    <section class="next-steps">
+    <!-- Additional Information -->
+    <section class="additional-info">
         <div class="container">
-            <h3>What's Next?</h3>
-            <div class="steps-grid">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h4>Check Your Email</h4>
-                    <p>You'll receive a confirmation email with your registration details within the next few minutes.</p>
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="card-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3>Have Questions?</h3>
+                    <p>If you have any questions about the conference, please don't hesitate to contact our support team.</p>
+                    <a href="mailto:info@yaicess.com" class="info-link">
+                        <i class="fas fa-envelope"></i>
+                        Contact Support
+                    </a>
                 </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h4>Add to Calendar</h4>
-                    <p>Save the dates (July 21-23, 2025) and download the conference app when it becomes available.</p>
+
+                <div class="info-card">
+                    <div class="card-icon">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h3>Accommodation</h3>
+                    <p>Need a place to stay? We've partnered with local hotels to offer special rates for conference attendees.</p>
+                    <a href="#" class="info-link">
+                        <i class="fas fa-bed"></i>
+                        View Hotels
+                    </a>
                 </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h4>Prepare for the Event</h4>
-                    <p>Review the agenda and speaker information to plan your conference experience.</p>
+
+                <div class="info-card">
+                    <div class="card-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Transportation</h3>
+                    <p>Information about parking, public transportation, and shuttle services to the conference venue.</p>
+                    <a href="#" class="info-link">
+                        <i class="fas fa-route"></i>
+                        Get Directions
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <!-- Social Sharing -->
+    <section class="social-sharing">
+        <div class="container">
+            <div class="sharing-content">
+                <h3>Spread the Word!</h3>
+                <p>Help us grow the tech community by sharing your excitement about YAICESS Tech Conference 2025</p>
+                <div class="social-buttons">
+                    <button onclick="shareOnTwitter()" class="social-btn twitter">
+                        <i class="fab fa-twitter"></i>
+                        Twitter
+                    </button>
+                    <button onclick="shareOnLinkedIn()" class="social-btn linkedin">
+                        <i class="fab fa-linkedin"></i>
+                        LinkedIn
+                    </button>
+                    <button onclick="shareOnFacebook()" class="social-btn facebook">
+                        <i class="fab fa-facebook"></i>
+                        Facebook
+                    </button>
+                    <button onclick="copyEventLink()" class="social-btn copy">
+                        <i class="fas fa-link"></i>
+                        Copy Link
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>About YAICESS</h3>
-                    <p>YAICESS Solutions is a leading technology consulting firm dedicated to innovation and excellence.</p>
+                    <h3>YAICESS Solutions</h3>
+                    <p>Leading the future of technology through innovation, education, and collaboration.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
                 <div class="footer-section">
-                    <h3>Quick Links</h3>
+                    <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="speakers.html">Speakers</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#speakers">Speakers</a></li>
                         <li><a href="register.html">Register</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-envelope"></i> info@yaicess.com</p>
-                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@yaicess.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Tech District, Silicon Valley</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Event Details</h4>
+                    <ul>
+                        <li><i class="fas fa-calendar"></i> August 15-16, 2025</li>
+                        <li><i class="fas fa-clock"></i> 9:00 AM - 6:00 PM</li>
+                        <li><i class="fas fa-users"></i> Limited to 200 attendees</li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 YAICESS Solutions. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="admin-login.html">Admin Portal</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/success.js"></script>
 </body>
 </html>

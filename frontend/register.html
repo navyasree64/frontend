@@ -4,119 +4,309 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - YAICESS Tech Conference 2025</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>YAICESS</h1>
-                <span>Tech Conference 2025</span>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><a href="index.html">YAICESS <span>Solutions</span></a></h2>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="speakers.html">Speakers</a></li>
-                    <li><a href="register.html" class="active">Register</a></li>
-                    <li><a href="login.html">Login</a></li>
-                </ul>
-            </nav>
-            <div class="mobile-menu">
-                <i class="fas fa-bars"></i>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#speakers" class="nav-link">Speakers</a></li>
+                <li><a href="index.html#schedule" class="nav-link">Schedule</a></li>
+                <li><a href="register.html" class="nav-link nav-cta active">Register Now</a></li>
+                <li><a href="admin-login.html" class="nav-link admin-link">Admin</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
-    </header>
+    </nav>
 
+    <!-- Registration Header -->
     <section class="page-header">
         <div class="container">
-            <h2>Conference Registration</h2>
-            <p>Secure your spot at YAICESS Tech Conference 2025</p>
+            <div class="page-header-content">
+                <h1>Conference Registration</h1>
+                <p>Join the premier tech conference of 2025</p>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span><i class="fas fa-chevron-right"></i></span>
+                    <span>Registration</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="registration-form">
+    <!-- Registration Form Section -->
+    <section class="registration-section">
         <div class="container">
-            <form id="registrationForm" action="submit.php" method="POST">
-                <div class="form-group">
-                    <label for="fullName">Full Name*</label>
-                    <input type="text" id="fullName" name="full_name" required>
+            <div class="registration-container">
+                <!-- Conference Info Sidebar -->
+                <div class="conference-info">
+                    <div class="info-card">
+                        <h3>Conference Details</h3>
+                        <div class="info-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div>
+                                <h4>Date</h4>
+                                <p>August 15-16, 2025</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Time</h4>
+                                <p>9:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Tech District Conference Center<br>Silicon Valley, CA</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h4>Capacity</h4>
+                                <p>Limited to 200 attendees</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>What's Included</h3>
+                        <ul class="included-list">
+                            <li><i class="fas fa-check"></i> Access to all sessions</li>
+                            <li><i class="fas fa-check"></i> Conference materials</li>
+                            <li><i class="fas fa-check"></i> Lunch & refreshments</li>
+                            <li><i class="fas fa-check"></i> Networking opportunities</li>
+                            <li><i class="fas fa-check"></i> Certificate of attendance</li>
+                            <li><i class="fas fa-check"></i> Access to speaker presentations</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Registration Stats</h3>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-number" id="totalRegistrationsReg">0</span>
+                                <span class="stat-label">Total Registered</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" id="recentRegistrationsReg">0</span>
+                                <span class="stat-label">Today</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email Address*</label>
-                    <input type="email" id="email" name="email" required>
+
+                <!-- Registration Form -->
+                <div class="form-container">
+                    <div class="form-header">
+                        <h2>Registration Form</h2>
+                        <p>Please fill out all required fields to secure your spot</p>
+                    </div>
+
+                    <!-- Success/Error Messages -->
+                    <div id="messageContainer" class="message-container" style="display: none;">
+                        <div id="messageContent" class="message"></div>
+                    </div>
+
+                    <form id="registrationForm" class="registration-form">
+                        <div class="form-group">
+                            <label for="fullName">Full Name <span class="required">*</span></label>
+                            <input type="text" id="fullName" name="full_name" required>
+                            <span class="error-message" id="fullNameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" required>
+                            <span class="error-message" id="phoneError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="organization">Organization/Company <span class="required">*</span></label>
+                            <input type="text" id="organization" name="organization" required>
+                            <span class="error-message" id="organizationError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sessionChoice">Preferred Session <span class="required">*</span></label>
+                            <select id="sessionChoice" name="session_choice" required>
+                                <option value="">Select a session</option>
+                                <option value="AI and Machine Learning Trends">AI and Machine Learning Trends (9:00 AM)</option>
+                                <option value="Cloud Computing Strategies">Cloud Computing Strategies (11:00 AM)</option>
+                                <option value="Cybersecurity in Modern Apps">Cybersecurity in Modern Apps (2:00 PM)</option>
+                                <option value="DevOps and Automation">DevOps and Automation (4:00 PM)</option>
+                            </select>
+                            <span class="error-message" id="sessionChoiceError"></span>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="terms" required>
+                                <span class="checkmark"></span>
+                                I agree to the <a href="#" target="_blank">Terms and Conditions</a> and <a href="#" target="_blank">Privacy Policy</a>
+                            </label>
+                            <span class="error-message" id="termsError"></span>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter">
+                                <span class="checkmark"></span>
+                                Subscribe to our newsletter for updates and future events
+                            </label>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-large" id="submitBtn">
+                                <i class="fas fa-user-plus"></i>
+                                <span>Register Now</span>
+                                <div class="loading-spinner" style="display: none;"></div>
+                            </button>
+                            <p class="form-note">
+                                <i class="fas fa-lock"></i>
+                                Your information is secure and will not be shared with third parties
+                            </p>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number*</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="organization">Organization/Institution</label>
-                    <input type="text" id="organization" name="organization">
-                </div>
-                <div class="form-group">
-                    <label for="sessionChoice">Preferred Session*</label>
-                    <select id="sessionChoice" name="session_choice" required>
-                        <option value="">Select a session</option>
-                        <option value="AI Track">AI and Machine Learning Track</option>
-                        <option value="Cloud Track">Cloud Computing Track</option>
-                        <option value="Blockchain Track">Blockchain Technology Track</option>
-                        <option value="Cybersecurity Track">Cybersecurity Track</option>
-                        <option value="Full Conference">Full Conference (All Tracks)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="dietary">Dietary Requirements</label>
-                    <select id="dietary" name="dietary">
-                        <option value="None">None</option>
-                        <option value="Vegetarian">Vegetarian</option>
-                        <option value="Vegan">Vegan</option>
-                        <option value="Gluten-Free">Gluten-Free</option>
-                        <option value="Other">Other (please specify in notes)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="notes">Additional Notes</label>
-                    <textarea id="notes" name="notes" rows="4"></textarea>
-                </div>
-                <div class="form-group checkbox">
-                    <input type="checkbox" id="agree" name="agree" required>
-                    <label for="agree">I agree to the <a href="#">terms and conditions</a> and understand that my data will be processed in accordance with the <a href="#">privacy policy</a>.*</label>
-                </div>
-                <button type="submit" class="btn">Complete Registration</button>
-            </form>
+            </div>
         </div>
     </section>
 
-    <footer>
+    <!-- Session Information -->
+    <section class="sessions-info">
+        <div class="container">
+            <h2>Session Information</h2>
+            <div class="sessions-grid">
+                <div class="session-card">
+                    <div class="session-time">09:00 AM</div>
+                    <div class="session-content">
+                        <h3>AI and Machine Learning Trends</h3>
+                        <p class="speaker">Dr. Sarah Chen - AI Research Director</p>
+                        <p class="description">Explore the latest advancements in artificial intelligence and machine learning technologies that are reshaping industries worldwide.</p>
+                        <div class="session-tags">
+                            <span class="tag">Keynote</span>
+                            <span class="tag">Beginner-Friendly</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="session-card">
+                    <div class="session-time">11:00 AM</div>
+                    <div class="session-content">
+                        <h3>Cloud Computing Strategies</h3>
+                        <p class="speaker">Mark Johnson - Cloud Solutions Architect</p>
+                        <p class="description">Learn about cloud strategies, migration best practices, and emerging cloud technologies from industry experts.</p>
+                        <div class="session-tags">
+                            <span class="tag">Workshop</span>
+                            <span class="tag">Intermediate</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="session-card">
+                    <div class="session-time">02:00 PM</div>
+                    <div class="session-content">
+                        <h3>Cybersecurity in Modern Apps</h3>
+                        <p class="speaker">Lisa Rodriguez - Cybersecurity Specialist</p>
+                        <p class="description">Discover modern security protocols, threat detection, and protection strategies for today's digital landscape.</p>
+                        <div class="session-tags">
+                            <span class="tag">Technical</span>
+                            <span class="tag">Advanced</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="session-card">
+                    <div class="session-time">04:00 PM</div>
+                    <div class="session-content">
+                        <h3>DevOps and Automation</h3>
+                        <p class="speaker">Alex Kumar - DevOps Engineer</p>
+                        <p class="description">Master DevOps practices, automation tools, and continuous integration/deployment strategies.</p>
+                        <div class="session-tags">
+                            <span class="tag">Hands-on</span>
+                            <span class="tag">Intermediate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>About YAICESS</h3>
-                    <p>YAICESS Solutions is a leading technology consulting firm dedicated to innovation and excellence.</p>
+                    <h3>YAICESS Solutions</h3>
+                    <p>Leading the future of technology through innovation, education, and collaboration.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
                 <div class="footer-section">
-                    <h3>Quick Links</h3>
+                    <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="speakers.html">Speakers</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#speakers">Speakers</a></li>
                         <li><a href="register.html">Register</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-envelope"></i> info@yaicess.com</p>
-                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@yaicess.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Tech District, Silicon Valley</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Event Details</h4>
+                    <ul>
+                        <li><i class="fas fa-calendar"></i> August 15-16, 2025</li>
+                        <li><i class="fas fa-clock"></i> 9:00 AM - 6:00 PM</li>
+                        <li><i class="fas fa-users"></i> Limited to 200 attendees</li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 YAICESS Solutions. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="admin-login.html">Admin Portal</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/register.js"></script>
 </body>
 </html>

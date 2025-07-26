@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - YAICESS Tech Conference</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="admin-body">
+    <!-- Admin Login Section -->
+    <section class="admin-login">
+        <div class="admin-container">
+            <!-- Left Side - Branding -->
+            <div class="admin-branding">
+                <div class="branding-content">
+                    <div class="logo">
+                        <h1>YAICESS <span>Solutions</span></h1>
+                        <p>Tech Conference 2025</p>
+                    </div>
+                    <div class="branding-info">
+                        <h2>Admin Portal</h2>
+                        <p>Manage conference registrations, view analytics, and control all aspects of the YAICESS Tech Conference.</p>
+                        <div class="features">
+                            <div class="feature">
+                                <i class="fas fa-users"></i>
+                                <span>Registration Management</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>Real-time Analytics</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-download"></i>
+                                <span>Data Export</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="back-to-site">
+                    <a href="index.html">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Conference Site
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Side - Login Form -->
+            <div class="admin-form-section">
+                <div class="form-container">
+                    <div class="form-header">
+                        <h2>Admin Login</h2>
+                        <p>Enter your credentials to access the admin dashboard</p>
+                    </div>
+
+                    <!-- Success/Error Messages -->
+                    <div id="messageContainer" class="message-container" style="display: none;">
+                        <div id="messageContent" class="message"></div>
+                    </div>
+
+                    <form id="adminLoginForm" class="login-form">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <div class="input-group">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="username" name="username" required autocomplete="username">
+                            </div>
+                            <span class="error-message" id="usernameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="input-group">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="password" name="password" required autocomplete="current-password">
+                                <button type="button" class="toggle-password" id="togglePassword">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <span class="error-message" id="passwordError"></span>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="rememberMe">
+                                <span class="checkmark"></span>
+                                Remember me
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full" id="loginBtn">
+                            <i class="fas fa-sign-in-alt"></i>
+                            <span>Login to Dashboard</span>
+                            <div class="loading-spinner" style="display: none;"></div>
+                        </button>
+
+                        <div class="form-footer">
+                            <div class="security-info">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Secure login protected by encryption</span>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Demo Credentials -->
+                    <div class="demo-credentials">
+                        <h4>Demo Credentials</h4>
+                        <div class="credentials-box">
+                            <div class="credential">
+                                <strong>Username:</strong> admin
+                            </div>
+                            <div class="credential">
+                                <strong>Password:</strong> admin123
+                            </div>
+                        </div>
+                        <p class="demo-note">
+                            <i class="fas fa-info-circle"></i>
+                            These are default credentials for demo purposes. Change them after first login.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="admin-footer">
+        <div class="container">
+            <p>&copy; 2025 YAICESS Solutions. All rights reserved. | Admin Portal v1.0</p>
+            <div class="footer-links">
+                <a href="#">Support</a>
+                <a href="#">Documentation</a>
+                <a href="index.html">Main Site</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/admin-login.js"></script>
+</body>
+</html>
