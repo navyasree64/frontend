@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard - YAICESS Tech Conference 2025</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>YAICESS</h1>
+                <span>My Conference Dashboard</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Conference Home</a></li>
+                    <li><a href="user-dashboard.html" class="active">My Dashboard</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="user-header">
+        <div class="container">
+            <div class="user-welcome">
+                <div class="user-avatar">
+                    <img src="images/user-avatar.jpg" alt="User Avatar">
+                </div>
+                <div class="user-info">
+                    <h2>Welcome back, <span id="user-name">John Smith</span></h2>
+                    <p>Your registration for YAICESS Tech Conference 2025 is confirmed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="user-stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Registration Status</h3>
+                        <p class="stat-number">Confirmed</p>
+                        <p class="stat-change">ID: CONF-2025-1001</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Your Session</h3>
+                        <p class="stat-number">AI Track</p>
+                        <p class="stat-change">Main Auditorium</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Networking</h3>
+                        <p class="stat-number">12 Connections</p>
+                        <p class="stat-change">5 new since yesterday</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="user-content">
+        <div class="container">
+            <div class="user-tabs">
+                <button class="tab-btn active" data-tab="overview">Overview</button>
+                <button class="tab-btn" data-tab="schedule">My Schedule</button>
+                <button class="tab-btn" data-tab="badge">My Badge</button>
+                <button class="tab-btn" data-tab="resources">Resources</button>
+            </div>
+            <div class="tab-content active" id="overview">
+                <div class="registration-details">
+                    <h3>Your Registration Details</h3>
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <h4>Full Name</h4>
+                            <p>John Smith</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Email</h4>
+                            <p>john.smith@example.com</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Phone</h4>
+                            <p>(555) 123-4567</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Organization</h4>
+                            <p>TechCorp</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Session Choice</h4>
+                            <p>AI Track</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Dietary Requirements</h4>
+                            <p>Vegetarian</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Registration Date</h4>
+                            <p>July 15, 2025</p>
+                        </div>
+                    </div>
+                    <button class="btn">Update Information</button>
+                </div>
+            </div>
+            <div class="tab-content" id="schedule">
+                <div class="schedule-container">
+                    <h3>Your Personalized Schedule</h3>
+                    <div class="schedule-day">
+                        <h4>Day 1 - July 21, 2025</h4>
+                        <div class="schedule-items">
+                            <div class="schedule-item">
+                                <div class="time">9:00 - 10:00</div>
+                                <div class="event">
+                                    <h5>Registration & Welcome Coffee</h5>
+                                    <p>Main Lobby</p>
+                                </div>
+                            </div>
+                            <div class="schedule-item highlight">
+                                <div class="time">10:00 - 11:30</div>
+                                <div class="event">
+                                    <h5>Opening Keynote: The Future of AI</h5>
+                                    <p>Dr. Sarah Johnson, Chief AI Scientist at TechFuture</p>
+                                    <p>Main Auditorium</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="schedule-day">
+                        <h4>Day 2 - July 22, 2025</h4>
+                        <div class="schedule-items">
+                            <div class="schedule-item highlight">
+                                <div class="time">9:00 - 10:30</div>
+                                <div class="event">
+                                    <h5>Machine Learning Workshop</h5>
+                                    <p>Hands-on session with industry experts</p>
+                                    <p>Room 205</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content" id="badge">
+                <div class="badge-container">
+                    <h3>Your Conference Badge</h3>
+                    <div class="badge-preview">
+                        <div class="badge-front">
+                            <div class="badge-header">
+                                <h4>YAICESS</h4>
+                                <p>Tech Conference 2025</p>
+                            </div>
+                            <div class="badge-photo">
+                                <img src="images/user-avatar.jpg" alt="Badge Photo">
+                            </div>
+                            <div class="badge-info">
+                                <h5>John Smith</h5>
+                                <p>TechCorp</p>
+                                <p class="badge-type">AI Track</p>
+                            </div>
+                            <div class="badge-footer">
+                                <p>ID: CONF-2025-1001</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="badge-actions">
+                        <button class="btn"><i class="fas fa-download"></i> Download Badge</button>
+                        <button class="btn"><i class="fas fa-print"></i> Print Badge</button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content" id="resources">
+                <div class="resources-container">
+                    <h3>Conference Resources</h3>
+                    <div class="resources-grid">
+                        <div class="resource-card">
+                            <div class="resource-icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="resource-info">
+                                <h4>Conference Program</h4>
+                                <p>Detailed schedule and session descriptions</p>
+                                <a href="#" class="btn-small">Download</a>
+                            </div>
+                        </div>
+                        <div class="resource-card">
+                            <div class="resource-icon">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <div class="resource-info">
+                                <h4>Venue Map</h4>
+                                <p>Floor plans and location information</p>
+                                <a href="#" class="btn-small">View</a>
+                            </div>
+                        </div>
+                        <div class="resource-card">
+                            <div class="resource-icon">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <div class="resource-info">
+                                <h4>Speaker Presentations</h4>
+                                <p>Access slides and materials from sessions</p>
+                                <a href="#" class="btn-small">Browse</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About YAICESS</h3>
+                    <p>YAICESS Solutions is a leading technology consulting firm dedicated to innovation and excellence.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Conference Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="speakers.html">Speakers</a></li>
+                        <li><a href="register.html">Register</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Help & Support</h3>
+                    <p><i class="fas fa-envelope"></i> help@yaicess.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 987-6543</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 YAICESS Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - YAICESS Tech Conference 2025</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>YAICESS</h1>
+                <span>Tech Conference 2025</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="speakers.html">Speakers</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="login.html" class="active">Login</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h2>Login to Your Account</h2>
+            <p>Access your conference dashboard</p>
+        </div>
+    </section>
+
+    <section class="login-form">
+        <div class="container">
+            <div class="form-container">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email Address*</label>
+                        <input type="email" id="loginEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password*</label>
+                        <input type="password" id="loginPassword" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="userType">Login As*</label>
+                        <select id="userType" name="userType" required>
+                            <option value="">Select user type</option>
+                            <option value="admin">Admin</option>
+                            <option value="user">Attendee</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                    <div class="form-footer">
+                        <p>Don't have an account? <a href="register.html">Register here</a></p>
+                        <p><a href="#">Forgot password?</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About YAICESS</h3>
+                    <p>YAICESS Solutions is a leading technology consulting firm dedicated to innovation and excellence.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="speakers.html">Speakers</a></li>
+                        <li><a href="register.html">Register</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> info@yaicess.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 YAICESS Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

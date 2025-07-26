@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - YAICESS Tech Conference 2025</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>YAICESS</h1>
+                <span>Admin Dashboard</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">View Site</a></li>
+                    <li><a href="admin-dashboard.html" class="active">Dashboard</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="admin-header">
+        <div class="container">
+            <h2>Admin Dashboard</h2>
+            <div class="admin-welcome">
+                <p>Welcome back, <strong>Admin</strong> | Last login: Today at 10:30 AM</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="admin-stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Total Registrations</h3>
+                        <p class="stat-number">1,248</p>
+                        <p class="stat-change"><i class="fas fa-arrow-up"></i> 12% from last week</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>AI Track</h3>
+                        <p class="stat-number">487</p>
+                        <p class="stat-change"><i class="fas fa-arrow-up"></i> 18% from last week</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Cloud Track</h3>
+                        <p class="stat-number">326</p>
+                        <p class="stat-change"><i class="fas fa-arrow-up"></i> 8% from last week</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Blockchain Track</h3>
+                        <p class="stat-number">215</p>
+                        <p class="stat-change"><i class="fas fa-arrow-down"></i> 3% from last week</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="admin-content">
+        <div class="container">
+            <div class="admin-tabs">
+                <button class="tab-btn active" data-tab="registrations">Registrations</button>
+                <button class="tab-btn" data-tab="export">Export Data</button>
+                <button class="tab-btn" data-tab="settings">Settings</button>
+            </div>
+            <div class="tab-content active" id="registrations">
+                <div class="table-container">
+                    <table id="registrationsTable" class="display">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Organization</th>
+                                <th>Session</th>
+                                <th>Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1001</td>
+                                <td>John Smith</td>
+                                <td>john.smith@example.com</td>
+                                <td>(555) 123-4567</td>
+                                <td>TechCorp</td>
+                                <td>AI Track</td>
+                                <td>2025-07-15 09:30</td>
+                                <td>
+                                    <button class="btn-small view-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-small delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1002</td>
+                                <td>Sarah Johnson</td>
+                                <td>sarah.j@example.com</td>
+                                <td>(555) 987-6543</td>
+                                <td>DataSystems</td>
+                                <td>Cloud Track</td>
+                                <td>2025-07-15 10:15</td>
+                                <td>
+                                    <button class="btn-small view-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-small delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1003</td>
+                                <td>Michael Chen</td>
+                                <td>michael.chen@example.com</td>
+                                <td>(555) 456-7890</td>
+                                <td>University of Tech</td>
+                                <td>Blockchain Track</td>
+                                <td>2025-07-14 14:45</td>
+                                <td>
+                                    <button class="btn-small view-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-small delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1004</td>
+                                <td>Emily Wilson</td>
+                                <td>emily.w@example.com</td>
+                                <td>(555) 789-0123</td>
+                                <td>Innovate Inc</td>
+                                <td>Full Conference</td>
+                                <td>2025-07-14 16:20</td>
+                                <td>
+                                    <button class="btn-small view-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-small delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-content" id="export">
+                <div class="export-options">
+                    <h3>Export Registration Data</h3>
+                    <p>Select the format you'd like to export the registration data in:</p>
+                    <div class="export-buttons">
+                        <button class="btn"><i class="fas fa-file-csv"></i> Export as CSV</button>
+                        <button class="btn"><i class="fas fa-file-excel"></i> Export as Excel</button>
+                        <button class="btn"><i class="fas fa-file-pdf"></i> Export as PDF</button>
+                    </div>
+                    <div class="export-filters">
+                        <h4>Filter Data</h4>
+                        <div class="filter-group">
+                            <label for="export-session">By Session:</label>
+                            <select id="export-session">
+                                <option value="all">All Sessions</option>
+                                <option value="AI Track">AI Track</option>
+                                <option value="Cloud Track">Cloud Track</option>
+                                <option value="Blockchain Track">Blockchain Track</option>
+                                <option value="Full Conference">Full Conference</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="export-date">By Date Range:</label>
+                            <input type="date" id="export-start-date">
+                            <span>to</span>
+                            <input type="date" id="export-end-date">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content" id="settings">
+                <div class="settings-form">
+                    <h3>Conference Settings</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="conference-name">Conference Name</label>
+                            <input type="text" id="conference-name" value="YAICESS Tech Conference 2025">
+                        </div>
+                        <div class="form-group">
+                            <label for="conference-dates">Conference Dates</label>
+                            <input type="text" id="conference-dates" value="July 21-23, 2025">
+                        </div>
+                        <div class="form-group">
+                            <label for="conference-venue">Venue</label>
+                            <input type="text" id="conference-venue" value="Grand Tech Convention Center">
+                        </div>
+                        <div class="form-group">
+                            <label for="registration-status">Registration Status</label>
+                            <select id="registration-status">
+                                <option value="open">Open</option>
+                                <option value="closed">Closed</option>
+                                <option value="waitlist">Waitlist Only</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn">Save Settings</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>YAICESS Admin</h3>
+                    <p>Conference management system for YAICESS Tech Conference 2025</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">View Site</a></li>
+                        <li><a href="#">Registrations</a></li>
+                        <li><a href="#">Reports</a></li>
+                        <li><a href="#">Settings</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <p><i class="fas fa-envelope"></i> support@yaicess.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 987-6543</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 YAICESS Solutions. All rights reserved. | Admin Dashboard v1.0</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
