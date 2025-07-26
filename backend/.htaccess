@@ -1,0 +1,125 @@
+# YAICESS Solutions - Backend Security Configuration
+# Apache .htaccess file for enhanced security and URL handling
+
+# Enable URL Rewriting
+RewriteEngine On
+
+# Security Headers
+<IfModule mod_headers.c>
+    # Prevent clickjacking
+    Header always append X-Frame-Options SAMEORIGIN
+    
+    # Prevent MIME type sniffing
+    Header always append X-Content-Type-Options nosniff
+    
+    # Enable XSS protection
+    Header always append X-XSS-Protection "1; mode=block"
+    
+    # Referrer policy
+    Header always append Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Content Security Policy
+    Header always append Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';"
+</IfModule>
+
+# Hide sensitive files and directories
+<Files "*.md">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "*.sql">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files ".htaccess">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Protect configuration files
+<Files "database.php">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Block access to backup files
+<FilesMatch "\.(bak|backup|old|tmp)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Disable directory browsing
+Options -Indexes
+
+# Custom error pages
+ErrorDocument 404 /backend/errors/404.html
+ErrorDocument 403 /backend/errors/403.html
+ErrorDocument 500 /backend/errors/500.html
+
+# API URL Rewriting (optional)
+# Uncomment if you want cleaner API URLs
+# RewriteRule ^api/register/?$ api/register.php [L]
+# RewriteRule ^api/login/?$ api/admin_login.php [L]
+# RewriteRule ^api/logout/?$ api/admin_logout.php [L]
+# RewriteRule ^api/registrations/?$ api/get_registrations.php [L]
+# RewriteRule ^api/stats/?$ api/get_stats.php [L]
+# RewriteRule ^api/export/?$ api/export_csv.php [L]
+
+# PHP Security Settings
+<IfModule mod_php7.c>
+    # Disable dangerous functions
+    php_admin_value disable_functions "exec,passthru,shell_exec,system,proc_open,popen"
+    
+    # Hide PHP version
+    php_admin_value expose_php Off
+    
+    # Limit file uploads
+    php_admin_value upload_max_filesize 2M
+    php_admin_value post_max_size 8M
+    
+    # Session security
+    php_admin_value session.cookie_httponly 1
+    php_admin_value session.use_only_cookies 1
+    php_admin_value session.cookie_secure 0
+</IfModule>
+
+# CORS Headers for API access (adjust as needed)
+<IfModule mod_headers.c>
+    # Allow CORS for development (restrict in production)
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With"
+    Header set Access-Control-Max-Age "3600"
+</IfModule>
+
+# Handle preflight requests
+RewriteCond %{REQUEST_METHOD} OPTIONS
+RewriteRule ^(.*)$ $1 [R=200,L]
+
+# Compression for better performance
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+</IfModule>
+
+# Cache control for static assets
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+</IfModule>
